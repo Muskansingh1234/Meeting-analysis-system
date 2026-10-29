@@ -1,0 +1,4 @@
+export default function Dashboard({ meetings = [], onNewMeeting = () => {} }) {
+  const completed = meetings.filter((m) => m.status === "Completed").length;
+  return <section className="stats-grid"><article className="stat-card"><div className="stat-icon purple">▤</div><p>Total meetings</p><div className="stat-value-row"><strong>{meetings.length}</strong><span>In your workspace</span></div></article><article className="stat-card"><div className="stat-icon green">✧</div><p>Completed analyses</p><div className="stat-value-row"><strong>{completed}</strong><span>Ready for review</span></div></article><article className="stat-card"><div className="stat-icon orange">✓</div><p>Pending tasks</p><div className="stat-value-row"><strong>3</strong><span>Sample data</span></div></article><button className="button primary-button" onClick={onNewMeeting}>＋ New meeting</button></section>;
+}
